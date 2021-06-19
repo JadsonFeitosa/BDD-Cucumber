@@ -7,12 +7,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/features/aprender_cucumber.feature",
-//		glue = {"br.ce.wcaquino.steps", "br.ce.wcaquino.config"},
+//		features = "src/test/java/features/aprender_cucumber.feature",
 //		tags = {"@unitários", "not @ignore"},
-		plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
+		glue = {"CucumberFramework.steps"},
+		plugin = {"pretty"}, // "html:target/report-html", "json:target/report.json"},
 		monochrome = false,
-		snippets = SnippetType.CAMELCASE,
+//		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
 		strict = false
 		)

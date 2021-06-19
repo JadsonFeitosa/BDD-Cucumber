@@ -13,7 +13,6 @@ import cucumber.api.java.pt.Quando;
 
 public class AprenderCucumber {
 
-	
 	@Dado("^que criei o arquivo corretamente$")
 	public void queCrieiOArquivoCorretamente() throws Throwable {
 		System.out.println("qualquer coisa");
@@ -27,8 +26,6 @@ public class AprenderCucumber {
 	public void aEspecificaçãoDeveFinalizarComSucesso() throws Throwable {
 	}
 	
-//	###################  Cenario Contador - Deve incrementar contador ##################################
-
 	private int contador = 0;
 	
 	@Dado("^que o valor do contador é (\\d+)$")
@@ -44,15 +41,11 @@ public class AprenderCucumber {
 	@Então("^o valor do contador será (\\d+)$")
 	public void oValorDoContadorSerá(int arg1) throws Throwable {
 	    Assert.assertEquals(arg1, contador);
-//		Assert.assertTrue(arg1 == contador);
-//		throw new RuntimeException();
 	}
-	
-//	###################### Cenario Contador - Deve Calcular atraso na entrega  ############################
 	
 	Date entrega = new Date();
 	
-	@Dado("que a entrega é dia {data}")
+	@Dado("que a entrega é dia (/d+)")
 	public void queAEntregaÉDia(Date data) throws Throwable {
 	    entrega = data;
 	    System.out.println(entrega);
@@ -77,8 +70,6 @@ public class AprenderCucumber {
 		String dataFormatada = format.format(entrega);
 		Assert.assertEquals(data, dataFormatada);
 	}
-	
-//	###################### Cenario Contador - Deve Calcular atraso na entrega da china  ###########################
 	
 	@Dado("^que o ticket( especial)? é (A.\\d{3})$")
 	public void queOTicketÉAF(String tipo, String arg1) throws Throwable {
